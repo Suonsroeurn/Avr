@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <record id="action_khmer_address" model="ir.actions.act_window">
+            <field name="name">Khmer Address</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">khmer.address</field>
+            <field name="view_mode">tree,kanban,form</field> 
+        </record>       
+   
+        <record id="view_khmer_address_tree" model="ir.ui.view">
+            <field name="name">khmer.address.tree</field>
+            <field name="model">khmer.address</field>
+            <field name="arch" type="xml">
+                <tree string="Khmer Address">
+                    <field name="name"/>
+                    <field name="commune_en"/>
+                    <field name="commune_kh"/>
+                    <field name="district_en"/>
+                    <field name="district_kh"/>
+                    <field name="province_en"/>
+                    <field name="province_kh"/>
+                    <field name="country_en"/>
+                    <field name="country_kh"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_khmer_address_form" model="ir.ui.view">
+            <field name="name">khmer.address.form</field>
+            <field name="model">khmer.address</field>
+            <field name="arch" type="xml">
+                <form string="Khmer Address">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="commune_en"/>
+                            <field name="district_en"/>
+                            <field name="province_en"/>
+                            <field name="country_en"/>
+                        </group>
+                        <group>
+                            <field name="commune_kh"/>
+                            <field name="district_kh"/>
+                            <field name="province_kh"/>
+                            <field name="country_kh"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_khmer_address_search" model="ir.ui.view">
+            <field name="name">khmer.address.search</field>
+            <field name="model">khmer.address</field>
+            <field name="arch" type="xml">
+                <search string="Khmer Addres Search">
+                    <field name="name"/>
+                    <field name="commune_en"/>
+                    <field name="district_en"/>
+                    <field name="province_en"/>
+                    <group string="Group By">
+                        <filter name="groupby_province" string="Province" context="{'group_by': 'province_en'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <menuitem id="menu_khmer_address"
+            action="action_khmer_address" parent="contacts.menu_localisation"
+            sequence="5"/>
+
+    </data>
+</odoo>
