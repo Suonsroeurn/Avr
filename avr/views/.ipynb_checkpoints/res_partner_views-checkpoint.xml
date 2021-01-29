@@ -7,11 +7,32 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>  
       <field name="arch" type="xml">
+          <field name="street" position="before">
+                <field name="country_id" position="move"/>
+          </field>         
           <field name="street2" position="after">
-              <field name="address_id" placeholder="Search Commune Address"/>
-              <field name="address_en" placeholder="Address in English"/>
-              <field name="address_kh" placeholder="Address in Khmer"/>
+              <field name="address_id" placeholder="Search Commune Address" attrs="{'invisible': [('country_id', '!=', 116)]}"/>
+              <field name="address_en" placeholder="Address in English" attrs="{'invisible': [('country_id', '!=', 116)]}"/>
+              <field name="address_kh" placeholder="Address in Khmer" attrs="{'invisible': [('country_id', '!=', 116)]}"/>
           </field>
+            <field name="zip" position="attributes">
+                <attribute name="invisible">0</attribute>
+                <attribute name="attrs">
+                    {'invisible': [('country_id', '==', 116)]}
+                </attribute>
+            </field>
+            <field name="state_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+                <attribute name="attrs">
+                    {'invisible': [('country_id', '==', 116)]}
+                </attribute>
+            </field>
+            <field name="city" position="attributes">
+                <attribute name="invisible">0</attribute>
+                <attribute name="attrs">
+                    {'invisible': [('country_id', '==', 116)]}
+                </attribute>               
+            </field>
       </field>
     </record>
 

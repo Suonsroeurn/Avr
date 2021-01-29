@@ -1,3 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_avr_avr,avr.avr, model_avr_avr,base.group_user,1,1,1,1
-access_khmer_address,khmer.address.user,model_khmer_address,,1,1,1,1
+access_khmer_address,access.khmer.address,model_khmer_address,,1,1,1,1
