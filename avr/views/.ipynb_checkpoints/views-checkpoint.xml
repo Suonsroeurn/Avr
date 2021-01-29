@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="view_partner_form_inherit">
+      <field name="name">res.partner.form.inherit</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>  
+      <field name="arch" type="xml">
+          <field name="vat" position="after">
+              <field name="father_name"/>
+          </field>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="avr.action_window">
+      <field name="name">avr window</field>
+      <field name="res_model">avr.avr</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="avr.action_server">
+      <field name="name">avr server</field>
+      <field name="model_id" ref="model_avr_avr"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="avr" id="avr.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="avr.menu_1" parent="avr.menu_root"/>
+    <menuitem name="Menu 2" id="avr.menu_2" parent="avr.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="avr.menu_1_list" parent="avr.menu_1"
+              action="avr.action_window"/>
+    <menuitem name="Server to list" id="avr" parent="avr.menu_2"
+              action="avr.action_server"/>
+-->
+  </data>
+</odoo>
