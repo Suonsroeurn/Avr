@@ -7,8 +7,10 @@
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"/>  
       <field name="arch" type="xml">
-          <field name="vat" position="after">
-              <field name="father_name"/>
+          <field name="street2" position="after">
+              <field name="address_id" placeholder="Search Commune Address"/>
+              <field name="address_en" placeholder="Address in English"/>
+              <field name="address_kh" placeholder="Address in Khmer"/>
           </field>
       </field>
     </record>
