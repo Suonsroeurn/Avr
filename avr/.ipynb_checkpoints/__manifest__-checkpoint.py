@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "avr",
+    'name': "Khmer Address",
 
     'summary': """
         Khmer Address""",
