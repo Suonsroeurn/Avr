@@ -17,7 +17,6 @@
           </field>
            <field name="user_id" position="attributes">
                 <attribute name="invisible">1</attribute>
-                <field name="user_id"/>
           </field>         
           <field name="insurer_id" position="after">
                 <field name="bank_account"/>
@@ -26,15 +25,9 @@
            </field>
           <field name="vehicle_id" position="attributes">
                 <attribute name="required">0</attribute>
-                <field name="vehicle_id"/>
           </field>          
-          <field name="vehicle_id" position="attributes">
-                <attribute name="invisible">1</attribute>
-                <field name="vehicle_id"/>
-          </field>
         <field name="purchaser_id" position="attributes">
                 <attribute name="invisible">1</attribute>
-                <field name="purchaser_id"/>
           </field>
           <field name="vehicle_id" position="after">
                 <field name="vehicle_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
