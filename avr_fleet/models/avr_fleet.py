@@ -9,7 +9,7 @@ class avr_fleet(models.Model):
 
     short_vin = fields.Char('Short VIN')
     loan = fields.Char('Loan')
-    engine_no = fields.Char('Engin No')
+    engine_no = fields.Char('Engine No')
     vehicle_type_id = fields.Selection([('car', 'Car'),
                                      ('accessory', 'Accessory'),
                                      ('driver', 'Driver'),

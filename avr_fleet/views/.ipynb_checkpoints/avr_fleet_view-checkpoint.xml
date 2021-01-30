@@ -54,9 +54,43 @@
           </field>
           <field name="horsepower" position="attributes">
                 <attribute name="invisible">0</attribute>
-                <field name="horsepower"/>
+                <field name="horsepower"/>                
           </field>
       </field>
     </record>
+    <record model="ir.ui.view" id="fleet_vehicle_view_tree_inherit">
+      <field name="name">fleet.vehicle.inherit</field>
+      <field name="model">fleet.vehicle</field>
+      <field name="inherit_id" ref="fleet.fleet_vehicle_view_tree"/>  
+      <field name="arch" type="xml">
+           <field name="driver_id" position="before">
+                <field name="division"/>
+                <field name="vehicle_type_id"/>
+                <field name="fuel_type"/>
+                <field name="engine_no"/>
+                <field name="license_plate"/>
+                <field name="insurance_company"/>
+                <field name="insurance_expire"/>
+                <field name="inspection_expire"/>
+                <field name="gps_company"/>
+           </field>         
+      </field>    
+    </record>
+    <record id="fleet_vehicle_search_inherit" model="ir.ui.view">
+      <field name="name">fleet.vehicle.search_inherit</field>
+      <field name="model">fleet.vehicle</field>
+      <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <xpath expr="//group" position="inside">
+            <filter string="Division" name="groupby_model" context="{'group_by': 'division'}"/>
+            <filter string="Type" name="groupby_type_id" context="{'group_by': 'vehicle_type_id'}"/>
+            <filter string="Brand" name="groupby_make" context="{'group_by': 'brand_id'}"/>
+            <filter string="Model" name="groupby_model" context="{'group_by': 'model_id'}"/>
+            <filter string="Color" name="groupby_color" context="{'group_by': 'color'}"/>
+            <filter string="Year" name="groupby_year" context="{'group_by': 'model_year'}"/>
+        </xpath>
+      </field>
+    </record>      
   </data>
 </odoo>
