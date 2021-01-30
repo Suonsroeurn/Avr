@@ -6,6 +6,7 @@ class avr_fleet(models.Model):
     _description = 'fleet_vehicle_log_contract_customize'
     
     vehicle_ids = fields.Many2many('fleet.vehicle', 'fleet_vehicle_fleet_vehicle_log_contract_rel', 'fleet_vehicle_id', 'fleet_vehicle_log_contract_id', string="Vehicle Contract", copy=False)
+    customer_id = fields.Many2one('res.partner', 'Customer')
     bank_account = fields.Many2one('res.bank', 'Bank Account')
     km_limited = fields.Integer('Limited Distance')
     deduct_insurance = fields.Monetary('Deducted Insurance')

@@ -14,7 +14,11 @@
           <field name="user_id" position="before">
                 <field name="emp_id"/>
                 <field name="rep_com_id"/>
+                <field name="customer_id"/>
           </field>
+          <field name="insurer_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+          </field>  
            <field name="user_id" position="attributes">
                 <attribute name="invisible">1</attribute>
           </field>         
@@ -23,14 +27,13 @@
                 <field name="pro_tmpl_id"/>
                 <field name="price_ids" widget="many2many_tags"/>  
            </field>
-          <field name="vehicle_id" position="attributes">
-                <attribute name="required">0</attribute>
+          <field name="vehicle_id" position="replace">
+                <field name="vehicle_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
           </field>          
         <field name="purchaser_id" position="attributes">
                 <attribute name="invisible">1</attribute>
           </field>
-          <field name="vehicle_id" position="after">
-                <field name="vehicle_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+          <field name="purchaser_id" position="after">                
                 <field name="km_limited"/>
                 <field name="deduct_insurance"/>
                 <field name="insurance_payment"/>
