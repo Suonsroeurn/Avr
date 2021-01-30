@@ -76,13 +76,14 @@
            </field>         
       </field>    
     </record>
-    <record id="fleet_vehicle_search_inherit" model="ir.ui.view">
+    <record id="fleet_vehicle_view_search_inherit" model="ir.ui.view">
       <field name="name">fleet.vehicle.search_inherit</field>
       <field name="model">fleet.vehicle</field>
       <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
       <field name="mode">primary</field>
       <field name="arch" type="xml">
         <xpath expr="//filter[@name='groupby_status']" position="after">
+            <separator/>
             <filter string="Division" name="groupby_model" context="{'group_by': 'division'}"/>
             <filter string="Type" name="groupby_type_id" context="{'group_by': 'vehicle_type_id'}"/>
             <filter string="Brand" name="groupby_make" context="{'group_by': 'brand_id'}"/>
@@ -91,6 +92,6 @@
             <filter string="Year" name="groupby_year" context="{'group_by': 'model_year'}"/>
         </xpath>
       </field>
-    </record>      
+    </record>   
   </data>
 </odoo>
