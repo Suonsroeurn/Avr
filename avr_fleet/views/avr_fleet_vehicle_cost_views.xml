@@ -1,0 +1,49 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="fleet_vehicle_log_contract_view_form_inherit">
+      <field name="name">fleet.vehicle.inherit</field>
+      <field name="model">fleet.vehicle.log.contract</field>
+      <field name="inherit_id" ref="fleet.fleet_vehicle_log_contract_view_form"/>  
+      <field name="arch" type="xml">
+          <field name="name" position="after">
+                <label for="contract_number" class="oe_edit_only"/>
+                <h2>
+                    <field name="contract_number"/>
+                </h2>
+          </field>
+          <field name="user_id" position="before">
+                <field name="emp_id"/>
+                <field name="rep_com_id"/>
+          </field>
+           <field name="user_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+                <field name="user_id"/>
+          </field>         
+          <field name="insurer_id" position="after">
+                <field name="bank_account"/>
+                <field name="pro_tmpl_id"/>
+                <field name="price_ids" widget="many2many_tags"/>  
+           </field>
+          <field name="vehicle_id" position="attributes">
+                <attribute name="required">0</attribute>
+                <field name="vehicle_id"/>
+          </field>          
+          <field name="vehicle_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+                <field name="vehicle_id"/>
+          </field>
+        <field name="purchaser_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+                <field name="purchaser_id"/>
+          </field>
+          <field name="vehicle_id" position="after">
+                <field name="vehicle_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="km_limited"/>
+                <field name="deduct_insurance"/>
+                <field name="insurance_payment"/>
+                <field name="security_deposit"/>
+          </field>
+      </field>
+    </record>  
+  </data>
+</odoo>

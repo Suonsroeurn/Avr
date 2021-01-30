@@ -25,6 +25,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/avr_fleet_view.xml',
+        'views/avr_fleet_vehicle_cost_views.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
