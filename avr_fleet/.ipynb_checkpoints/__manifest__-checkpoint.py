@@ -3,13 +3,13 @@
     'name': "Avr Fleet Management",
 
     'summary': """
-        More Advance for Fleet in every day need!""",
+        To fit daily operation""",
 
     'description': """
-        Long description of module's purpose
+        Customize to fit daily use of fleet rental.
     """,
 
-    'author': "Sroerun Suon",
+    'author': "sroeurn suon",
     'website': "http://www.soupkophnomkhleng.odoo.com",
 
     # Categories can be used to filter modules in modules listing
