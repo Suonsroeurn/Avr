@@ -82,7 +82,7 @@
       <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
       <field name="mode">primary</field>
       <field name="arch" type="xml">
-        <xpath expr="//group/filter[@name='groupby_model']" position="after">
+        <xpath expr="//search/group" position="inside">
             <filter string="Division" name="groupby_model" context="{'group_by': 'division'}"/>
             <filter string="Type" name="groupby_type_id" context="{'group_by': 'vehicle_type_id'}"/>
             <filter string="Color" name="groupby_color" context="{'group_by': 'color'}"/>
