@@ -80,7 +80,6 @@
       <field name="name">fleet.vehicle.search_inherit</field>
       <field name="model">fleet.vehicle</field>
       <field name="inherit_id" ref="fleet.fleet_vehicle_view_search"/>
-      <field name="mode">primary</field>
       <field name="arch" type="xml">
         <xpath expr="//search/group" position="inside">            
             <filter string="Division" name="groupby_model" context="{'group_by': 'division'}"/>
